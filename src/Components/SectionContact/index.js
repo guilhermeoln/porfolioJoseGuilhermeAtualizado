@@ -1,11 +1,21 @@
+import { useEffect } from "react";
 import "./contact.css";
 import logoSectionContact from '../../assets/img/logoAbout.jpg';
 import { FaWhatsapp, FaMailBulk, FaLinkedinIn} from "react-icons/fa";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 export default function SectionContact(){
+
+    useEffect(() =>{
+        Aos.init({ duration: 2000})
+    },[])
+
     return(
         <div className="containerSectionContact" id="contato">
-            <div className="formSectionContact">
+            <div className="formSectionContact" data-aos="fade-right">
                 <div className="headerContact">
                     <h2>Deixe uma mensagem</h2>
                     <p>Irei responder o mais rápido possível.</p>
@@ -17,7 +27,7 @@ export default function SectionContact(){
                     <button>ENVIAR</button>
                 </div>
             </div>
-            <div className="textSectionContact">
+            <div className="textSectionContact" data-aos="fade-right">
                 <img src={logoSectionContact} alt="logo-contact"/>
                 <p><FaWhatsapp className="iconContact"/>(81)99805-9073</p>
                 <p><FaMailBulk className="iconContact"/>guilhermedev2002@gmail.com</p>
